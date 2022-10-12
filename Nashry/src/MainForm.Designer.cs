@@ -39,6 +39,7 @@
             this.empButton = new System.Windows.Forms.Button();
             this.outDevButton = new System.Windows.Forms.Button();
             this.inDevButton = new System.Windows.Forms.Button();
+            this.chiledPanel = new System.Windows.Forms.Panel();
             this.controlPanel.SuspendLayout();
             this.sidePanel.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             this.controlPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.controlPanel.Location = new System.Drawing.Point(10, 10);
             this.controlPanel.Name = "controlPanel";
-            this.controlPanel.Size = new System.Drawing.Size(882, 30);
+            this.controlPanel.Size = new System.Drawing.Size(1242, 30);
             this.controlPanel.TabIndex = 1;
             this.controlPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.controlPanel_MouseDown);
             // 
@@ -105,11 +106,12 @@
             this.sidePanel.Controls.Add(this.outDevButton);
             this.sidePanel.Controls.Add(this.inDevButton);
             this.sidePanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sidePanel.Location = new System.Drawing.Point(642, 40);
+            this.sidePanel.Location = new System.Drawing.Point(1002, 40);
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Padding = new System.Windows.Forms.Padding(10);
-            this.sidePanel.Size = new System.Drawing.Size(250, 532);
+            this.sidePanel.Size = new System.Drawing.Size(250, 652);
             this.sidePanel.TabIndex = 2;
+            this.sidePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sidePanel_Paint);
             // 
             // logoutButton
             // 
@@ -119,7 +121,7 @@
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.logoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
-            this.logoutButton.Location = new System.Drawing.Point(10, 462);
+            this.logoutButton.Location = new System.Drawing.Point(10, 582);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(230, 60);
             this.logoutButton.TabIndex = 5;
@@ -206,15 +208,25 @@
             this.inDevButton.UseVisualStyleBackColor = false;
             this.inDevButton.Click += new System.EventHandler(this.inDevButton_Click);
             // 
+            // chiledPanel
+            // 
+            this.chiledPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chiledPanel.Location = new System.Drawing.Point(10, 40);
+            this.chiledPanel.Name = "chiledPanel";
+            this.chiledPanel.Size = new System.Drawing.Size(992, 652);
+            this.chiledPanel.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(902, 582);
+            this.ClientSize = new System.Drawing.Size(1262, 702);
             this.ControlBox = false;
+            this.Controls.Add(this.chiledPanel);
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.controlPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(920, 600);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(10);
@@ -237,5 +249,6 @@
         private Button empButton;
         private Button outDevButton;
         private Button inDevButton;
+        private Panel chiledPanel;
     }
 }

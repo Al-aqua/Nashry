@@ -1,17 +1,47 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Nashry.src
 {
-    public partial class MainForm : Form
+    public partial class MainFormv2 : Form
     {
 
         private Button? currentBtn;
         private new Form? ActiveForm;
 
-
-        public MainForm()
+        public MainFormv2()
         {
             InitializeComponent();
+        }
+
+        private void DisableButton()
+        {
+            foreach (Control button in sidePanel.Controls)
+            {
+                if (button is Button && button.Name != usernameButton.Name)
+                {
+                    button.BackColor = Color.FromArgb(245, 249, 255);
+                }
+            }
+        }
+
+        private void ActiveButton(object btnSender)
+        {
+            if (currentBtn != btnSender)
+            {
+                DisableButton();
+                currentBtn = (Button)btnSender;
+                currentBtn.BackColor = Color.FromArgb(20, 148, 250);
+
+            }
         }
 
         private void OpenChiledForm(Form chiled, object sender)
@@ -36,20 +66,6 @@ namespace Nashry.src
             Application.Exit();
         }
 
-        private void maxButton_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-            {
-                maxButton.Image = Properties.Resources.max2;
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                maxButton.Image = Properties.Resources.max1;
-                this.WindowState = FormWindowState.Normal;
-            }
-        }
-
         private void minButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -64,28 +80,6 @@ namespace Nashry.src
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void DisableButton()
-        {
-            foreach (Control button in sidePanel.Controls)
-            {
-                if (button is Button)
-                {
-                    button.BackColor = Color.FromArgb(245, 249, 255);
-                }
-            }
-        }
-
-        private void ActiveButton(object btnSender)
-        {
-            if (currentBtn != btnSender)
-            {
-                DisableButton();
-                currentBtn = (Button)btnSender;
-                currentBtn.BackColor = Color.FromArgb(20, 148, 250);
-
-            }
         }
 
         private void inDevButton_Click(object sender, EventArgs e)
@@ -111,11 +105,6 @@ namespace Nashry.src
         private void reportsButton_Click(object sender, EventArgs e)
         {
             ActiveButton(sender);
-        }
-
-        private void sidePanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
