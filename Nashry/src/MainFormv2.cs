@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Runtime.InteropServices;
 
 namespace Nashry.src
 {
@@ -89,22 +80,22 @@ namespace Nashry.src
 
         private void outDevButton_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChiledForm(new Forms.OutDevForm(), sender);
         }
 
         private void empButton_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChiledForm(new Forms.EmpForm(), sender);
         }
 
         private void cusButton_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChiledForm(new Forms.CustForm(), sender);
         }
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChiledForm(new Forms.ReportsForm(), sender);
         }
     }
 }

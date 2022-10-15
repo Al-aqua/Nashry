@@ -34,7 +34,7 @@
             this.usernameButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             this.reportsButton = new System.Windows.Forms.Button();
-            this.cusButton = new System.Windows.Forms.Button();
+            this.custButton = new System.Windows.Forms.Button();
             this.empButton = new System.Windows.Forms.Button();
             this.outDevButton = new System.Windows.Forms.Button();
             this.inDevButton = new System.Windows.Forms.Button();
@@ -72,7 +72,7 @@
             this.sidePanel.Controls.Add(this.usernameButton);
             this.sidePanel.Controls.Add(this.logoutButton);
             this.sidePanel.Controls.Add(this.reportsButton);
-            this.sidePanel.Controls.Add(this.cusButton);
+            this.sidePanel.Controls.Add(this.custButton);
             this.sidePanel.Controls.Add(this.empButton);
             this.sidePanel.Controls.Add(this.outDevButton);
             this.sidePanel.Controls.Add(this.inDevButton);
@@ -130,20 +130,20 @@
             this.reportsButton.UseVisualStyleBackColor = false;
             this.reportsButton.Click += new System.EventHandler(this.reportsButton_Click);
             // 
-            // cusButton
+            // custButton
             // 
-            this.cusButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.cusButton.FlatAppearance.BorderSize = 0;
-            this.cusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cusButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cusButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
-            this.cusButton.Location = new System.Drawing.Point(10, 290);
-            this.cusButton.Name = "cusButton";
-            this.cusButton.Size = new System.Drawing.Size(230, 50);
-            this.cusButton.TabIndex = 3;
-            this.cusButton.Text = "حسابات التجار";
-            this.cusButton.UseVisualStyleBackColor = false;
-            this.cusButton.Click += new System.EventHandler(this.cusButton_Click);
+            this.custButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.custButton.FlatAppearance.BorderSize = 0;
+            this.custButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.custButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.custButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
+            this.custButton.Location = new System.Drawing.Point(10, 290);
+            this.custButton.Name = "custButton";
+            this.custButton.Size = new System.Drawing.Size(230, 50);
+            this.custButton.TabIndex = 3;
+            this.custButton.Text = "حسابات التجار";
+            this.custButton.UseVisualStyleBackColor = false;
+            this.custButton.Click += new System.EventHandler(this.cusButton_Click);
             // 
             // empButton
             // 
@@ -260,7 +260,7 @@
         private Button usernameButton;
         private Button logoutButton;
         private Button reportsButton;
-        private Button cusButton;
+        private Button custButton;
         private Panel chiledPanel;
     }
 }
