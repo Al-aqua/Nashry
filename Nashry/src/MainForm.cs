@@ -8,10 +8,31 @@ namespace Nashry.src
         private Button? currentBtn;
         private new Form? ActiveForm;
 
-
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void DisableButton()
+        {
+            foreach (Control button in sidePanel.Controls)
+            {
+                if (button is Button && button.Name != usernameButton.Name)
+                {
+                    button.BackColor = Color.FromArgb(245, 249, 255);
+                }
+            }
+        }
+
+        private void ActiveButton(object btnSender)
+        {
+            if (currentBtn != btnSender)
+            {
+                DisableButton();
+                currentBtn = (Button)btnSender;
+                currentBtn.BackColor = Color.FromArgb(20, 148, 250);
+
+            }
         }
 
         private void OpenChiledForm(Form chiled, object sender)
@@ -36,20 +57,6 @@ namespace Nashry.src
             Application.Exit();
         }
 
-        private void maxButton_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-            {
-                maxButton.Image = Properties.Resources.max2;
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                maxButton.Image = Properties.Resources.max1;
-                this.WindowState = FormWindowState.Normal;
-            }
-        }
-
         private void minButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -66,28 +73,6 @@ namespace Nashry.src
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void DisableButton()
-        {
-            foreach (Control button in sidePanel.Controls)
-            {
-                if (button is Button)
-                {
-                    button.BackColor = Color.FromArgb(245, 249, 255);
-                }
-            }
-        }
-
-        private void ActiveButton(object btnSender)
-        {
-            if (currentBtn != btnSender)
-            {
-                DisableButton();
-                currentBtn = (Button)btnSender;
-                currentBtn.BackColor = Color.FromArgb(20, 148, 250);
-
-            }
-        }
-
         private void inDevButton_Click(object sender, EventArgs e)
         {
             OpenChiledForm(new Forms.InDevForm(), sender);
@@ -95,27 +80,22 @@ namespace Nashry.src
 
         private void outDevButton_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChiledForm(new Forms.OutDevForm(), sender);
         }
 
         private void empButton_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChiledForm(new Forms.EmpForm(), sender);
         }
 
         private void cusButton_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChiledForm(new Forms.CustForm(), sender);
         }
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
-        }
-
-        private void sidePanel_Paint(object sender, PaintEventArgs e)
-        {
-
+            OpenChiledForm(new Forms.ReportsForm(), sender);
         }
     }
 }
