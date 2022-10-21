@@ -97,5 +97,13 @@ namespace Nashry.src
         {
             OpenChiledForm(new Forms.ReportsForm(), sender);
         }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var loginFrom = new LoginForm();
+            loginFrom.Closed += (s, args) => this.Close();
+            loginFrom.Show();
+        }
     }
 }
