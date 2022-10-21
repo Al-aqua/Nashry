@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Nashrydb" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Nashrydb.mdf;Integrated Security=True" SettingsObjectName="Nashry.Properties.Settings" SettingsPropertyName="dbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Accounts" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="phone_number" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="account_type" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Account_CashFlow" Member="CashFlows" ThisKey="Id" OtherKey="account_id" Type="CashFlow" />
+      <Association Name="Account_InDevice" Member="InDevices" ThisKey="Id" OtherKey="account_id" Type="InDevice" />
+      <Association Name="Account_Wallet" Member="Wallets" ThisKey="Id" OtherKey="account_id" Type="Wallet" />
+      <Association Name="Account_WorkHistory" Member="WorkHistories" ThisKey="Id" OtherKey="account_id" Type="WorkHistory" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CashFlow" Member="CashFlows">
+    <Type Name="CashFlow">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="account_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Account_CashFlow" Member="Account" ThisKey="account_id" OtherKey="Id" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Devices" Member="Devices">
+    <Type Name="Device">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="Device_InDevice" Member="InDevices" ThisKey="Id" OtherKey="device_id" Type="InDevice" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InDevices" Member="InDevices">
+    <Type Name="InDevice">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="account_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="device_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="InDevice_OutDevice" Member="OutDevices" ThisKey="Id" OtherKey="inDevices_id" Type="OutDevice" />
+      <Association Name="InDevice_WorkHistory" Member="WorkHistories" ThisKey="Id" OtherKey="inDevices_id" Type="WorkHistory" />
+      <Association Name="Account_InDevice" Member="Account" ThisKey="account_id" OtherKey="Id" Type="Account" IsForeignKey="true" />
+      <Association Name="Device_InDevice" Member="Device" ThisKey="device_id" OtherKey="Id" Type="Device" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OutDevices" Member="OutDevices">
+    <Type Name="OutDevice">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="inDevices_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fixed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="InDevice_OutDevice" Member="InDevice" ThisKey="inDevices_id" OtherKey="Id" Type="InDevice" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wallet" Member="Wallets">
+    <Type Name="Wallet">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="credit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="debit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="account_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Account_Wallet" Member="Account" ThisKey="account_id" OtherKey="Id" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkHistory" Member="WorkHistories">
+    <Type Name="WorkHistory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="account_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="inDevices_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Account_WorkHistory" Member="Account" ThisKey="account_id" OtherKey="Id" Type="Account" IsForeignKey="true" />
+      <Association Name="InDevice_WorkHistory" Member="InDevice" ThisKey="inDevices_id" OtherKey="Id" Type="InDevice" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

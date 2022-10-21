@@ -49,21 +49,33 @@ namespace Nashry.src
             {
                 showPassButton.Image = Properties.Resources.eye;
                 isPasswordShowed = false;
+                passwordTextBox.PasswordChar = '*';
             }
             else
             {
                 showPassButton.Image = Properties.Resources.eye__1_;
                 isPasswordShowed = true;
-
+                passwordTextBox.PasswordChar = '\0';
             }
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var mainFomr = new MainForm();
-            mainFomr.Closed += (s, args) => this.Close();
-            mainFomr.Show();
+            
+            using(DatabaseDataContext dbc = new DatabaseDataContext())
+            {
+                foreach (var user in dbc.Users)
+                {
+                    if (!user.user_name.Equals(userNameTextBox.Text))
+                        continue;
+                    if (!user.password.Equals(passwordTextBox.Text))
+                        continue;
+                    Hide();
+                    Form mainFomr = new MainForm();
+                    mainFomr.Closed += (s, args) => this.Close();
+                    mainFomr.Show();
+                }
+            }
         }
     }
 }

@@ -17,10 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="DataClasses.designer.cs">
+    <Compile Update="Database.designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>DataClasses.dbml</DependentUpon>
+      <DependentUpon>Database.dbml</DependentUpon>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -42,9 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="DataClasses.dbml">
+    <None Update="Database.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
+      <LastGenOutput>Database.designer.cs</LastGenOutput>
     </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -32,9 +32,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.showPassButton = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,9 +65,9 @@
             // 
             this.panel2.Controls.Add(this.showPassButton);
             this.panel2.Controls.Add(this.loginButton);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.passwordTextBox);
             this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.userNameTextBox);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
@@ -105,17 +105,18 @@
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // textBox2
+            // passwordTextBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
-            this.textBox2.Location = new System.Drawing.Point(275, 136);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "كلمة السر";
-            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox2.Size = new System.Drawing.Size(225, 30);
-            this.textBox2.TabIndex = 7;
+            this.passwordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
+            this.passwordTextBox.Location = new System.Drawing.Point(275, 136);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.PlaceholderText = "كلمة السر";
+            this.passwordTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.passwordTextBox.Size = new System.Drawing.Size(225, 30);
+            this.passwordTextBox.TabIndex = 7;
             // 
             // pictureBox3
             // 
@@ -126,17 +127,17 @@
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             // 
-            // textBox1
+            // userNameTextBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
-            this.textBox1.Location = new System.Drawing.Point(275, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "اسم المستخدم";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox1.Size = new System.Drawing.Size(225, 30);
-            this.textBox1.TabIndex = 5;
+            this.userNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.userNameTextBox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.userNameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
+            this.userNameTextBox.Location = new System.Drawing.Point(275, 96);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.PlaceholderText = "اسم المستخدم";
+            this.userNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.userNameTextBox.Size = new System.Drawing.Size(225, 30);
+            this.userNameTextBox.TabIndex = 5;
             // 
             // pictureBox2
             // 
@@ -252,8 +253,8 @@
         private PictureBox pictureBox3;
         private Button showPassButton;
         private Button loginButton;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox passwordTextBox;
+        private TextBox userNameTextBox;
         private Label label1;
     }
 }
