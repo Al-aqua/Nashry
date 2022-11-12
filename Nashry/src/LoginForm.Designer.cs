@@ -87,7 +87,7 @@
             this.showPassButton.Location = new System.Drawing.Point(280, 141);
             this.showPassButton.Name = "showPassButton";
             this.showPassButton.Size = new System.Drawing.Size(23, 20);
-            this.showPassButton.TabIndex = 10;
+            this.showPassButton.TabIndex = 4;
             this.showPassButton.UseVisualStyleBackColor = true;
             this.showPassButton.Click += new System.EventHandler(this.showPassButton_Click);
             // 
@@ -100,7 +100,7 @@
             this.loginButton.Location = new System.Drawing.Point(275, 176);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(261, 29);
-            this.loginButton.TabIndex = 9;
+            this.loginButton.TabIndex = 1;
             this.loginButton.Text = "تسجيل الدخول";
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -116,7 +116,7 @@
             this.passwordTextBox.PlaceholderText = "كلمة السر";
             this.passwordTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.passwordTextBox.Size = new System.Drawing.Size(225, 30);
-            this.passwordTextBox.TabIndex = 7;
+            this.passwordTextBox.TabIndex = 3;
             // 
             // pictureBox3
             // 
@@ -137,7 +137,7 @@
             this.userNameTextBox.PlaceholderText = "اسم المستخدم";
             this.userNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.userNameTextBox.Size = new System.Drawing.Size(225, 30);
-            this.userNameTextBox.TabIndex = 5;
+            this.userNameTextBox.TabIndex = 2;
             // 
             // pictureBox2
             // 
@@ -201,6 +201,7 @@
             this.minButton.Name = "minButton";
             this.minButton.Size = new System.Drawing.Size(30, 30);
             this.minButton.TabIndex = 6;
+            this.minButton.TabStop = false;
             this.minButton.UseVisualStyleBackColor = true;
             this.minButton.Click += new System.EventHandler(this.minButton_Click);
             // 
@@ -214,14 +215,17 @@
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(30, 30);
             this.closeButton.TabIndex = 5;
+            this.closeButton.TabStop = false;
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.loginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(40)))), ((int)(((byte)(67)))));
+            this.CancelButton = this.closeButton;
             this.ClientSize = new System.Drawing.Size(550, 350);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

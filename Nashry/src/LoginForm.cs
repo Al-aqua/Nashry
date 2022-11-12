@@ -20,6 +20,7 @@ namespace Nashry.src
         public LoginForm()
         {
             InitializeComponent();
+            Icon = Properties.Resources.repairingIcon;
         }
 
         private void closeButton_Click(object sender, EventArgs e)

@@ -38,7 +38,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
-            this.label3.Location = new System.Drawing.Point(50, 625);
+            this.label3.Location = new System.Drawing.Point(811, 620);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 41);
             this.label3.TabIndex = 5;
@@ -47,7 +47,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Nashry.Properties.Resources.repairing__5_;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 366);
+            this.pictureBox1.Location = new System.Drawing.Point(735, 361);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 256);
             this.pictureBox1.TabIndex = 4;
@@ -63,6 +63,8 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
             this.Text = "CustForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

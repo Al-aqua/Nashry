@@ -10,6 +10,7 @@ namespace Nashry.src
 
         public MainForm()
         {
+            Icon = Properties.Resources.repairingIcon;
             InitializeComponent();
         }
 

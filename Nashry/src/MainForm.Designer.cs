@@ -41,6 +41,7 @@
             this.controlPanel = new System.Windows.Forms.Panel();
             this.minButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.settingButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.sidePanel.SuspendLayout();
             this.controlPanel.SuspendLayout();
@@ -194,6 +195,7 @@
             // controlPanel
             // 
             this.controlPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
+            this.controlPanel.Controls.Add(this.settingButton);
             this.controlPanel.Controls.Add(this.minButton);
             this.controlPanel.Controls.Add(this.closeButton);
             this.controlPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -229,6 +231,18 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // settingButton
+            // 
+            this.settingButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.settingButton.FlatAppearance.BorderSize = 0;
+            this.settingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingButton.Image = global::Nashry.Properties.Resources.setting;
+            this.settingButton.Location = new System.Drawing.Point(1246, 0);
+            this.settingButton.Name = "settingButton";
+            this.settingButton.Size = new System.Drawing.Size(30, 30);
+            this.settingButton.TabIndex = 5;
+            this.settingButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -263,5 +277,6 @@
         private Button reportsButton;
         private Button custButton;
         private Panel chiledPanel;
+        private Button settingButton;
     }
 }
