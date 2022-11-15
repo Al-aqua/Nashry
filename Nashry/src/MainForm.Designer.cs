@@ -36,12 +36,11 @@
             this.reportsButton = new System.Windows.Forms.Button();
             this.custButton = new System.Windows.Forms.Button();
             this.empButton = new System.Windows.Forms.Button();
-            this.outDevButton = new System.Windows.Forms.Button();
             this.inDevButton = new System.Windows.Forms.Button();
             this.controlPanel = new System.Windows.Forms.Panel();
+            this.settingButton = new System.Windows.Forms.Button();
             this.minButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.settingButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.sidePanel.SuspendLayout();
             this.controlPanel.SuspendLayout();
@@ -75,7 +74,6 @@
             this.sidePanel.Controls.Add(this.reportsButton);
             this.sidePanel.Controls.Add(this.custButton);
             this.sidePanel.Controls.Add(this.empButton);
-            this.sidePanel.Controls.Add(this.outDevButton);
             this.sidePanel.Controls.Add(this.inDevButton);
             this.sidePanel.Location = new System.Drawing.Point(1016, 40);
             this.sidePanel.Name = "sidePanel";
@@ -101,6 +99,7 @@
             this.usernameButton.Text = "اسم المستخدم";
             this.usernameButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.usernameButton.UseVisualStyleBackColor = false;
+            this.usernameButton.Click += new System.EventHandler(this.usernameButton_Click);
             // 
             // logoutButton
             // 
@@ -120,11 +119,12 @@
             // reportsButton
             // 
             this.reportsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.reportsButton.Enabled = false;
             this.reportsButton.FlatAppearance.BorderSize = 0;
             this.reportsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reportsButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.reportsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
-            this.reportsButton.Location = new System.Drawing.Point(10, 350);
+            this.reportsButton.Location = new System.Drawing.Point(10, 290);
             this.reportsButton.Name = "reportsButton";
             this.reportsButton.Size = new System.Drawing.Size(230, 50);
             this.reportsButton.TabIndex = 4;
@@ -139,7 +139,7 @@
             this.custButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.custButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
-            this.custButton.Location = new System.Drawing.Point(10, 290);
+            this.custButton.Location = new System.Drawing.Point(10, 230);
             this.custButton.Name = "custButton";
             this.custButton.Size = new System.Drawing.Size(230, 50);
             this.custButton.TabIndex = 3;
@@ -154,28 +154,13 @@
             this.empButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.empButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.empButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
-            this.empButton.Location = new System.Drawing.Point(10, 230);
+            this.empButton.Location = new System.Drawing.Point(10, 170);
             this.empButton.Name = "empButton";
             this.empButton.Size = new System.Drawing.Size(230, 50);
             this.empButton.TabIndex = 2;
             this.empButton.Text = "العمال";
             this.empButton.UseVisualStyleBackColor = false;
             this.empButton.Click += new System.EventHandler(this.empButton_Click);
-            // 
-            // outDevButton
-            // 
-            this.outDevButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.outDevButton.FlatAppearance.BorderSize = 0;
-            this.outDevButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.outDevButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.outDevButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(32)))));
-            this.outDevButton.Location = new System.Drawing.Point(10, 170);
-            this.outDevButton.Name = "outDevButton";
-            this.outDevButton.Size = new System.Drawing.Size(230, 50);
-            this.outDevButton.TabIndex = 1;
-            this.outDevButton.Text = "البضاعة المسلم";
-            this.outDevButton.UseVisualStyleBackColor = false;
-            this.outDevButton.Click += new System.EventHandler(this.outDevButton_Click);
             // 
             // inDevButton
             // 
@@ -188,7 +173,7 @@
             this.inDevButton.Name = "inDevButton";
             this.inDevButton.Size = new System.Drawing.Size(230, 50);
             this.inDevButton.TabIndex = 0;
-            this.inDevButton.Text = "البضاعة الواصل";
+            this.inDevButton.Text = "البضاعة";
             this.inDevButton.UseVisualStyleBackColor = false;
             this.inDevButton.Click += new System.EventHandler(this.inDevButton_Click);
             // 
@@ -204,6 +189,19 @@
             this.controlPanel.Size = new System.Drawing.Size(1276, 30);
             this.controlPanel.TabIndex = 0;
             this.controlPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.controlPanel_MouseDown);
+            // 
+            // settingButton
+            // 
+            this.settingButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.settingButton.FlatAppearance.BorderSize = 0;
+            this.settingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingButton.Image = global::Nashry.Properties.Resources.setting;
+            this.settingButton.Location = new System.Drawing.Point(1246, 0);
+            this.settingButton.Name = "settingButton";
+            this.settingButton.Size = new System.Drawing.Size(30, 30);
+            this.settingButton.TabIndex = 5;
+            this.settingButton.UseVisualStyleBackColor = true;
+            this.settingButton.Click += new System.EventHandler(this.settingButton_Click);
             // 
             // minButton
             // 
@@ -230,18 +228,6 @@
             this.closeButton.TabIndex = 1;
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            // 
-            // settingButton
-            // 
-            this.settingButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.settingButton.FlatAppearance.BorderSize = 0;
-            this.settingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingButton.Image = global::Nashry.Properties.Resources.setting;
-            this.settingButton.Location = new System.Drawing.Point(1246, 0);
-            this.settingButton.Name = "settingButton";
-            this.settingButton.Size = new System.Drawing.Size(30, 30);
-            this.settingButton.TabIndex = 5;
-            this.settingButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -271,7 +257,6 @@
         private Panel sidePanel;
         private Button inDevButton;
         private Button empButton;
-        private Button outDevButton;
         private Button usernameButton;
         private Button logoutButton;
         private Button reportsButton;

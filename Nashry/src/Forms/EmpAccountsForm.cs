@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Nashry.src.Forms
 {
-    public partial class OutDevForm : Form
+    public partial class EmpAccountsForm : Form
     {
-        public OutDevForm()
+        public EmpAccountsForm()
         {
             InitializeComponent();
         }

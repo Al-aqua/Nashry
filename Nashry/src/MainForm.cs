@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using Nashry.src.Forms;
+using System.Runtime.InteropServices;
 
 namespace Nashry.src
 {
@@ -21,6 +22,10 @@ namespace Nashry.src
                 if (button is Button && button.Name != usernameButton.Name)
                 {
                     button.BackColor = Color.FromArgb(245, 249, 255);
+                }
+                else if (button.Name == usernameButton.Name)
+                {
+                    button.BackColor = Color.FromArgb(11, 19, 32);
                 }
             }
         }
@@ -79,11 +84,6 @@ namespace Nashry.src
             OpenChiledForm(new Forms.InDevForm(), sender);
         }
 
-        private void outDevButton_Click(object sender, EventArgs e)
-        {
-            OpenChiledForm(new Forms.OutDevForm(), sender);
-        }
-
         private void empButton_Click(object sender, EventArgs e)
         {
             OpenChiledForm(new Forms.EmpForm(), sender);
@@ -105,6 +105,17 @@ namespace Nashry.src
             var loginFrom = new LoginForm();
             loginFrom.Closed += (s, args) => this.Close();
             loginFrom.Show();
+        }
+
+        private void settingButton_Click(object sender, EventArgs e)
+        {
+            OpenChiledForm(new Forms.Settings(), sender);
+            settingButton.BackColor = Color.FromArgb(11, 19, 32);
+        }
+
+        private void usernameButton_Click(object sender, EventArgs e)
+        {
+            OpenChiledForm(new UserAccountsForm(), sender);
         }
     }
 }
